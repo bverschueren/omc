@@ -60,7 +60,7 @@ func getInfrastructures(currentContextPath string, namespace string, resourceNam
 
 		labels := helpers.ExtractLabels(infrastructure.GetLabels())
 		_list := []string{infrastructureName, age}
-		data = helpers.GetData(data, true, showLabels, labels, outputFlag, 2, _list)
+		data = append(data, helpers.GetData(true, showLabels, labels, outputFlag, 2, _list))
 	}
 
 	var headers []string
