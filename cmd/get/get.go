@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"omc/cmd/get/apps"
 	"omc/cmd/get/batch"
+	"omc/cmd/get/certificate"
 	"omc/cmd/get/core"
 	"omc/cmd/get/local"
 	appz "omc/cmd/get/openshift/apps"
@@ -89,9 +90,12 @@ func init() {
 		batch.Job,
 		build.Build,
 		build.BuildConfig,
+		certificate.CertificateSigningRequest,
 		config.ClusterOperator,
 		config.ClusterVersion,
 		config.Proxy,
+		config.Infrastructure,
+		config.Network,
 		core.ConfigMap,
 		core.Event,
 		core.Namespace,
