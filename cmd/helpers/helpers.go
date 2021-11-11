@@ -118,7 +118,7 @@ func CreateConfigFile(homePath string) {
 	_ = ioutil.WriteFile(cfgFilePath, file, 0644)
 }
 
-func GetData(data [][]string, allNamespacesFlag bool, showLabels bool, labels string, outputFlag string, column int32, _list []string) [][]string {
+func GetData(allNamespacesFlag bool, showLabels bool, labels string, outputFlag string, column int32, _list []string) []string {
 	var toAppend []string
 	if allNamespacesFlag == true {
 		if outputFlag == "" {
@@ -139,8 +139,7 @@ func GetData(data [][]string, allNamespacesFlag bool, showLabels bool, labels st
 	if showLabels {
 		toAppend = append(toAppend, labels)
 	}
-	data = append(data, toAppend)
-	return data
+	return toAppend
 }
 
 func ExtractLabels(_labels map[string]string) string {
